@@ -30,6 +30,9 @@ const unusedEmitter = new NativeEventEmitter(NativeModules.RNGestureHandlerModul
 const subscription = unusedEmitter.addListener("onGestureHandlerEvent",function(next){})
 // Now that our events are blessed by the system we can let go of the listener
 subscription.remove()
+// Doing it all again for onGestureHandlerStateChange
+const subscription2 = unusedEmitter.addListener("onGestureHandlerStateChange",function(next){})
+subscription2.remove()
 
 const customGHEventsConfig = {
   onGestureHandlerEvent: { registrationName: 'onGestureHandlerEvent' },
